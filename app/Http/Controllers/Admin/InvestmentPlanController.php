@@ -35,7 +35,7 @@ class InvestmentPlanController extends Controller
     {
         abort_if(Gate::denies('investment_plan_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $investmentPlan->load('company', 'investmentType', 'movedFromPlan');
+        $investmentPlan->load('company', 'investmentType', 'movedFromPlan', 'movedFromPlanTwo');
 
         return view('admin.investment-plan.show', compact('investmentPlan'));
     }

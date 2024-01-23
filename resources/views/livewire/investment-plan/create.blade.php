@@ -165,6 +165,16 @@
             {{ trans('cruds.investmentPlan.fields.moved_from_plan_helper') }}
         </div>
     </div>
+    <div class="form-group {{ $errors->has('investmentPlan.moved_from_plan_two_id') ? 'invalid' : '' }}">
+        <label class="form-label" for="moved_from_plan_two">{{ trans('cruds.investmentPlan.fields.moved_from_plan_two') }}</label>
+        <x-select-list class="form-control" id="moved_from_plan_two" name="moved_from_plan_two" :options="$this->listsForFields['moved_from_plan_two']" wire:model="investmentPlan.moved_from_plan_two_id" />
+        <div class="validation-message">
+            {{ $errors->first('investmentPlan.moved_from_plan_two_id') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.investmentPlan.fields.moved_from_plan_two_helper') }}
+        </div>
+    </div>
     <div class="form-group {{ $errors->has('investmentPlan.ftse_100_start') ? 'invalid' : '' }}">
         <label class="form-label" for="ftse_100_start">{{ trans('cruds.investmentPlan.fields.ftse_100_start') }}</label>
         <input class="form-control" type="number" name="ftse_100_start" id="ftse_100_start" wire:model.defer="investmentPlan.ftse_100_start" step="0.01">
@@ -223,6 +233,76 @@
         </div>
         <div class="help-block">
             {{ trans('cruds.investmentPlan.fields.stoxx_50_end_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('investmentPlan.kick_out_year_one') ? 'invalid' : '' }}">
+        <label class="form-label" for="kick_out_year_one">{{ trans('cruds.investmentPlan.fields.kick_out_year_one') }}</label>
+        <input class="form-control" type="number" name="kick_out_year_one" id="kick_out_year_one" wire:model.defer="investmentPlan.kick_out_year_one" step="1">
+        <div class="validation-message">
+            {{ $errors->first('investmentPlan.kick_out_year_one') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.investmentPlan.fields.kick_out_year_one_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('investmentPlan.kick_out_year_two') ? 'invalid' : '' }}">
+        <label class="form-label" for="kick_out_year_two">{{ trans('cruds.investmentPlan.fields.kick_out_year_two') }}</label>
+        <input class="form-control" type="number" name="kick_out_year_two" id="kick_out_year_two" wire:model.defer="investmentPlan.kick_out_year_two" step="1">
+        <div class="validation-message">
+            {{ $errors->first('investmentPlan.kick_out_year_two') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.investmentPlan.fields.kick_out_year_two_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('investmentPlan.kick_out_year_three') ? 'invalid' : '' }}">
+        <label class="form-label" for="kick_out_year_three">{{ trans('cruds.investmentPlan.fields.kick_out_year_three') }}</label>
+        <input class="form-control" type="number" name="kick_out_year_three" id="kick_out_year_three" wire:model.defer="investmentPlan.kick_out_year_three" step="1">
+        <div class="validation-message">
+            {{ $errors->first('investmentPlan.kick_out_year_three') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.investmentPlan.fields.kick_out_year_three_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('investmentPlan.kick_out_year_four') ? 'invalid' : '' }}">
+        <label class="form-label" for="kick_out_year_four">{{ trans('cruds.investmentPlan.fields.kick_out_year_four') }}</label>
+        <input class="form-control" type="number" name="kick_out_year_four" id="kick_out_year_four" wire:model.defer="investmentPlan.kick_out_year_four" step="1">
+        <div class="validation-message">
+            {{ $errors->first('investmentPlan.kick_out_year_four') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.investmentPlan.fields.kick_out_year_four_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('investmentPlan.kick_out_year_five') ? 'invalid' : '' }}">
+        <label class="form-label" for="kick_out_year_five">{{ trans('cruds.investmentPlan.fields.kick_out_year_five') }}</label>
+        <input class="form-control" type="number" name="kick_out_year_five" id="kick_out_year_five" wire:model.defer="investmentPlan.kick_out_year_five" step="1">
+        <div class="validation-message">
+            {{ $errors->first('investmentPlan.kick_out_year_five') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.investmentPlan.fields.kick_out_year_five_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('investmentPlan.kick_out_year_six') ? 'invalid' : '' }}">
+        <label class="form-label" for="kick_out_year_six">{{ trans('cruds.investmentPlan.fields.kick_out_year_six') }}</label>
+        <input class="form-control" type="number" name="kick_out_year_six" id="kick_out_year_six" wire:model.defer="investmentPlan.kick_out_year_six" step="1">
+        <div class="validation-message">
+            {{ $errors->first('investmentPlan.kick_out_year_six') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.investmentPlan.fields.kick_out_year_six_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('investmentPlan.kick_out_year_seven') ? 'invalid' : '' }}">
+        <label class="form-label" for="kick_out_year_seven">{{ trans('cruds.investmentPlan.fields.kick_out_year_seven') }}</label>
+        <input class="form-control" type="number" name="kick_out_year_seven" id="kick_out_year_seven" wire:model.defer="investmentPlan.kick_out_year_seven" step="1">
+        <div class="validation-message">
+            {{ $errors->first('investmentPlan.kick_out_year_seven') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.investmentPlan.fields.kick_out_year_seven_helper') }}
         </div>
     </div>
     <div class="form-group {{ $errors->has('investmentPlan.notes') ? 'invalid' : '' }}">

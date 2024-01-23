@@ -28,6 +28,13 @@ class CreateInvestmentPlansTable extends Migration
             $table->float('snp_500_end', 7, 2)->nullable();
             $table->float('stoxx_50_start', 7, 2)->nullable();
             $table->float('stoxx_50_end', 7, 2)->nullable();
+            $table->integer('kick_out_year_one')->nullable();
+            $table->integer('kick_out_year_two')->nullable();
+            $table->integer('kick_out_year_three')->nullable();
+            $table->integer('kick_out_year_four')->nullable();
+            $table->integer('kick_out_year_five')->nullable();
+            $table->integer('kick_out_year_six')->nullable();
+            $table->integer('kick_out_year_seven')->nullable();
             $table->longText('notes')->nullable();
             $table->timestamps();
             $table->softDeletes();

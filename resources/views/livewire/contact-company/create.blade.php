@@ -40,6 +40,16 @@
             {{ trans('cruds.contactCompany.fields.company_email_helper') }}
         </div>
     </div>
+    <div class="form-group {{ $errors->has('contactCompany.account_number') ? 'invalid' : '' }}">
+        <label class="form-label" for="account_number">{{ trans('cruds.contactCompany.fields.account_number') }}</label>
+        <input class="form-control" type="text" name="account_number" id="account_number" wire:model.defer="contactCompany.account_number">
+        <div class="validation-message">
+            {{ $errors->first('contactCompany.account_number') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.contactCompany.fields.account_number_helper') }}
+        </div>
+    </div>
 
     <div class="form-group">
         <button class="btn btn-indigo mr-2" type="submit">

@@ -57,6 +57,14 @@
                                 {{ $contactCompany->company_email }}
                             </td>
                         </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.contactCompany.fields.account_number') }}
+                            </th>
+                            <td>
+                                {{ $contactCompany->account_number }}
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

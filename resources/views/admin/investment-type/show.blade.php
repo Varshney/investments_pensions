@@ -19,14 +19,6 @@
                     <tbody class="bg-white">
                         <tr>
                             <th>
-                                {{ trans('cruds.investmentType.fields.id') }}
-                            </th>
-                            <td>
-                                {{ $investmentType->id }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
                                 {{ trans('cruds.investmentType.fields.type_name') }}
                             </th>
                             <td>

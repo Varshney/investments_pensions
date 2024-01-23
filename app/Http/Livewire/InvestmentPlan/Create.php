@@ -15,20 +15,27 @@ class Create extends Component
 
     public function mount(InvestmentPlan $investmentPlan)
     {
-        $this->investmentPlan                    = $investmentPlan;
-        $this->investmentPlan->currency          = 'GBP';
-        $this->investmentPlan->invested          = '0';
-        $this->investmentPlan->plan_length       = '5';
-        $this->investmentPlan->percentage        = '0';
-        $this->investmentPlan->second_percentage = '0';
-        $this->investmentPlan->income_based      = false;
-        $this->investmentPlan->compounded        = false;
-        $this->investmentPlan->ftse_100_start    = '0';
-        $this->investmentPlan->ftse_100_end      = '0';
-        $this->investmentPlan->snp_500_start     = '0';
-        $this->investmentPlan->snp_500_end       = '0';
-        $this->investmentPlan->stoxx_50_start    = '0';
-        $this->investmentPlan->stoxx_50_end      = '0';
+        $this->investmentPlan                      = $investmentPlan;
+        $this->investmentPlan->currency            = 'GBP';
+        $this->investmentPlan->invested            = '0';
+        $this->investmentPlan->plan_length         = '5';
+        $this->investmentPlan->percentage          = '0';
+        $this->investmentPlan->second_percentage   = '0';
+        $this->investmentPlan->income_based        = false;
+        $this->investmentPlan->compounded          = false;
+        $this->investmentPlan->ftse_100_start      = '0';
+        $this->investmentPlan->ftse_100_end        = '0';
+        $this->investmentPlan->snp_500_start       = '0';
+        $this->investmentPlan->snp_500_end         = '0';
+        $this->investmentPlan->stoxx_50_start      = '0';
+        $this->investmentPlan->stoxx_50_end        = '0';
+        $this->investmentPlan->kick_out_year_one   = '0';
+        $this->investmentPlan->kick_out_year_two   = '0';
+        $this->investmentPlan->kick_out_year_three = '0';
+        $this->investmentPlan->kick_out_year_four  = '0';
+        $this->investmentPlan->kick_out_year_five  = '0';
+        $this->investmentPlan->kick_out_year_six   = '0';
+        $this->investmentPlan->kick_out_year_seven = '0';
         $this->initListsForFields();
     }
 
@@ -114,6 +121,11 @@ class Create extends Component
                 'exists:investment_plans,id',
                 'nullable',
             ],
+            'investmentPlan.moved_from_plan_two_id' => [
+                'integer',
+                'exists:investment_plans,id',
+                'nullable',
+            ],
             'investmentPlan.ftse_100_start' => [
                 'numeric',
                 'min:0',
@@ -144,6 +156,48 @@ class Create extends Component
                 'min:0',
                 'nullable',
             ],
+            'investmentPlan.kick_out_year_one' => [
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+                'nullable',
+            ],
+            'investmentPlan.kick_out_year_two' => [
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+                'nullable',
+            ],
+            'investmentPlan.kick_out_year_three' => [
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+                'nullable',
+            ],
+            'investmentPlan.kick_out_year_four' => [
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+                'nullable',
+            ],
+            'investmentPlan.kick_out_year_five' => [
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+                'nullable',
+            ],
+            'investmentPlan.kick_out_year_six' => [
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+                'nullable',
+            ],
+            'investmentPlan.kick_out_year_seven' => [
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+                'nullable',
+            ],
             'investmentPlan.notes' => [
                 'string',
                 'nullable',
@@ -159,5 +213,6 @@ class Create extends Component
         $this->listsForFields['plan_length']             = $this->investmentPlan::PLAN_LENGTH_SELECT;
         $this->listsForFields['second_percentage_start'] = $this->investmentPlan::SECOND_PERCENTAGE_START_SELECT;
         $this->listsForFields['moved_from_plan']         = InvestmentPlan::pluck('plan_name', 'id')->toArray();
+        $this->listsForFields['moved_from_plan_two']     = InvestmentPlan::pluck('plan_name', 'id')->toArray();
     }
 }

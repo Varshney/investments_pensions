@@ -57,80 +57,16 @@
                             @include('components.table.sort', ['field' => 'investment_type.type_name'])
                         </th>
                         <th>
-                            {{ trans('cruds.investmentPlan.fields.currency') }}
-                            @include('components.table.sort', ['field' => 'currency'])
-                        </th>
-                        <th>
                             {{ trans('cruds.investmentPlan.fields.invested') }}
                             @include('components.table.sort', ['field' => 'invested'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.plan_length') }}
-                            @include('components.table.sort', ['field' => 'plan_length'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.percentage') }}
-                            @include('components.table.sort', ['field' => 'percentage'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.second_percentage') }}
-                            @include('components.table.sort', ['field' => 'second_percentage'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.second_percentage_start') }}
-                            @include('components.table.sort', ['field' => 'second_percentage_start'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.income_based') }}
-                            @include('components.table.sort', ['field' => 'income_based'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.compounded') }}
-                            @include('components.table.sort', ['field' => 'compounded'])
                         </th>
                         <th>
                             {{ trans('cruds.investmentPlan.fields.start_date') }}
                             @include('components.table.sort', ['field' => 'start_date'])
                         </th>
                         <th>
-                            {{ trans('cruds.investmentPlan.fields.end_date') }}
-                            @include('components.table.sort', ['field' => 'end_date'])
-                        </th>
-                        <th>
                             {{ trans('cruds.investmentPlan.fields.maturity_date') }}
                             @include('components.table.sort', ['field' => 'maturity_date'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.moved_from_plan') }}
-                            @include('components.table.sort', ['field' => 'moved_from_plan.plan_name'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.ftse_100_start') }}
-                            @include('components.table.sort', ['field' => 'ftse_100_start'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.ftse_100_end') }}
-                            @include('components.table.sort', ['field' => 'ftse_100_end'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.snp_500_start') }}
-                            @include('components.table.sort', ['field' => 'snp_500_start'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.snp_500_end') }}
-                            @include('components.table.sort', ['field' => 'snp_500_end'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.stoxx_50_start') }}
-                            @include('components.table.sort', ['field' => 'stoxx_50_start'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.stoxx_50_end') }}
-                            @include('components.table.sort', ['field' => 'stoxx_50_end'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.investmentPlan.fields.notes') }}
-                            @include('components.table.sort', ['field' => 'notes'])
                         </th>
                         <th>
                         </th>
@@ -159,63 +95,13 @@
                                 @endif
                             </td>
                             <td>
-                                {{ $investmentPlan->currency_label }}
-                            </td>
-                            <td>
                                 {{ $investmentPlan->invested }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->plan_length_label }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->percentage }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->second_percentage }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->second_percentage_start_label }}
-                            </td>
-                            <td>
-                                <input class="disabled:opacity-50 disabled:cursor-not-allowed" type="checkbox" disabled {{ $investmentPlan->income_based ? 'checked' : '' }}>
-                            </td>
-                            <td>
-                                <input class="disabled:opacity-50 disabled:cursor-not-allowed" type="checkbox" disabled {{ $investmentPlan->compounded ? 'checked' : '' }}>
                             </td>
                             <td>
                                 {{ $investmentPlan->start_date }}
                             </td>
                             <td>
-                                {{ $investmentPlan->end_date }}
-                            </td>
-                            <td>
                                 {{ $investmentPlan->maturity_date }}
-                            </td>
-                            <td>
-                                @if($investmentPlan->movedFromPlan)
-                                    <span class="badge badge-relationship">{{ $investmentPlan->movedFromPlan->plan_name ?? '' }}</span>
-                                @endif
-                            </td>
-                            <td>
-                                {{ $investmentPlan->ftse_100_start }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->ftse_100_end }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->snp_500_start }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->snp_500_end }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->stoxx_50_start }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->stoxx_50_end }}
-                            </td>
-                            <td>
-                                {{ $investmentPlan->notes }}
                             </td>
                             <td>
                                 <div class="flex justify-end">
