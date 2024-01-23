@@ -47,6 +47,10 @@ class Create extends Component
                 'string',
                 'nullable',
             ],
+            'contactCompany.account_number' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }

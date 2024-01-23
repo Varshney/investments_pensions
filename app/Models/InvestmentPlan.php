@@ -43,6 +43,26 @@ class InvestmentPlan extends Model
         'USD' => '$ - United States Dollars',
     ];
 
+    public $orderable = [
+        'id',
+        'plan_name',
+        'company.company_name',
+        'investment_type.type_name',
+        'invested',
+        'start_date',
+        'maturity_date',
+    ];
+
+    public $filterable = [
+        'id',
+        'plan_name',
+        'company.company_name',
+        'investment_type.type_name',
+        'invested',
+        'start_date',
+        'maturity_date',
+    ];
+
     public const PLAN_LENGTH_SELECT = [
         '1'  => '1',
         '2'  => '2',
@@ -56,30 +76,6 @@ class InvestmentPlan extends Model
         '10' => '10',
         '11' => '11',
         '12' => '12',
-    ];
-
-    public $filterable = [
-        'id',
-        'plan_name',
-        'company.company_name',
-        'investment_type.type_name',
-        'currency',
-        'invested',
-        'plan_length',
-        'percentage',
-        'second_percentage',
-        'second_percentage_start',
-        'start_date',
-        'end_date',
-        'maturity_date',
-        'moved_from_plan.plan_name',
-        'ftse_100_start',
-        'ftse_100_end',
-        'snp_500_start',
-        'snp_500_end',
-        'stoxx_50_start',
-        'stoxx_50_end',
-        'notes',
     ];
 
     protected $fillable = [
@@ -98,38 +94,20 @@ class InvestmentPlan extends Model
         'end_date',
         'maturity_date',
         'moved_from_plan_id',
+        'moved_from_plan_two_id',
         'ftse_100_start',
         'ftse_100_end',
         'snp_500_start',
         'snp_500_end',
         'stoxx_50_start',
         'stoxx_50_end',
-        'notes',
-    ];
-
-    public $orderable = [
-        'id',
-        'plan_name',
-        'company.company_name',
-        'investment_type.type_name',
-        'currency',
-        'invested',
-        'plan_length',
-        'percentage',
-        'second_percentage',
-        'second_percentage_start',
-        'income_based',
-        'compounded',
-        'start_date',
-        'end_date',
-        'maturity_date',
-        'moved_from_plan.plan_name',
-        'ftse_100_start',
-        'ftse_100_end',
-        'snp_500_start',
-        'snp_500_end',
-        'stoxx_50_start',
-        'stoxx_50_end',
+        'kick_out_year_one',
+        'kick_out_year_two',
+        'kick_out_year_three',
+        'kick_out_year_four',
+        'kick_out_year_five',
+        'kick_out_year_six',
+        'kick_out_year_seven',
         'notes',
     ];
 
@@ -194,6 +172,11 @@ class InvestmentPlan extends Model
     }
 
     public function movedFromPlan()
+    {
+        return $this->belongsTo(self::class);
+    }
+
+    public function movedFromPlanTwo()
     {
         return $this->belongsTo(self::class);
     }

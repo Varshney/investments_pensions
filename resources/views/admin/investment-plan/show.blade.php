@@ -153,6 +153,16 @@
                         </tr>
                         <tr>
                             <th>
+                                {{ trans('cruds.investmentPlan.fields.moved_from_plan_two') }}
+                            </th>
+                            <td>
+                                @if($investmentPlan->movedFromPlanTwo)
+                                    <span class="badge badge-relationship">{{ $investmentPlan->movedFromPlanTwo->plan_name ?? '' }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                                 {{ trans('cruds.investmentPlan.fields.ftse_100_start') }}
                             </th>
                             <td>
@@ -197,6 +207,62 @@
                             </th>
                             <td>
                                 {{ $investmentPlan->stoxx_50_end }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.investmentPlan.fields.kick_out_year_one') }}
+                            </th>
+                            <td>
+                                {{ $investmentPlan->kick_out_year_one }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.investmentPlan.fields.kick_out_year_two') }}
+                            </th>
+                            <td>
+                                {{ $investmentPlan->kick_out_year_two }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.investmentPlan.fields.kick_out_year_three') }}
+                            </th>
+                            <td>
+                                {{ $investmentPlan->kick_out_year_three }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.investmentPlan.fields.kick_out_year_four') }}
+                            </th>
+                            <td>
+                                {{ $investmentPlan->kick_out_year_four }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.investmentPlan.fields.kick_out_year_five') }}
+                            </th>
+                            <td>
+                                {{ $investmentPlan->kick_out_year_five }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.investmentPlan.fields.kick_out_year_six') }}
+                            </th>
+                            <td>
+                                {{ $investmentPlan->kick_out_year_six }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.investmentPlan.fields.kick_out_year_seven') }}
+                            </th>
+                            <td>
+                                {{ $investmentPlan->kick_out_year_seven }}
                             </td>
                         </tr>
                         <tr>

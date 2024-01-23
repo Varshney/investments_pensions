@@ -14,7 +14,9 @@ class AddRelationshipFieldsToInvestmentPlansTable extends Migration
             $table->unsignedBigInteger('investment_type_id')->nullable();
             $table->foreign('investment_type_id', 'investment_type_fk_9424309')->references('id')->on('investment_types');
             $table->unsignedBigInteger('moved_from_plan_id')->nullable();
-            $table->foreign('moved_from_plan_id', 'moved_from_plan_fk_9424321')->references('id')->on('investment_plans');
+            $table->foreign('moved_from_plan_id', 'moved_from_plan_fk_9424982')->references('id')->on('investment_plans');
+            $table->unsignedBigInteger('moved_from_plan_two_id')->nullable();
+            $table->foreign('moved_from_plan_two_id', 'moved_from_plan_two_fk_9424983')->references('id')->on('investment_plans');
         });
     }
 }

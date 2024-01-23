@@ -29,7 +29,7 @@ class Index extends Component
             'except' => '',
         ],
         'sortBy' => [
-            'except' => 'id',
+            'except' => 'start_date',
         ],
         'sortDirection' => [
             'except' => 'desc',
@@ -58,7 +58,7 @@ class Index extends Component
 
     public function mount()
     {
-        $this->sortBy            = 'id';
+        $this->sortBy            = 'start_date';
         $this->sortDirection     = 'desc';
         $this->perPage           = 100;
         $this->paginationOptions = config('project.pagination.options');
@@ -67,7 +67,7 @@ class Index extends Component
 
     public function render()
     {
-        $query = InvestmentPlan::with(['company', 'investmentType', 'movedFromPlan'])->advancedFilter([
+        $query = InvestmentPlan::with(['company', 'investmentType', 'movedFromPlan', 'movedFromPlanTwo'])->advancedFilter([
             's'               => $this->search ?: null,
             'order_column'    => $this->sortBy,
             'order_direction' => $this->sortDirection,

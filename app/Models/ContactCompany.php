@@ -15,6 +15,18 @@ class ContactCompany extends Model
 
     public $table = 'contact_companies';
 
+    public $orderable = [
+        'id',
+        'company_name',
+        'account_number',
+    ];
+
+    public $filterable = [
+        'id',
+        'company_name',
+        'account_number',
+    ];
+
     protected $dates = [
         'created_at',
         'updated_at',
@@ -26,22 +38,7 @@ class ContactCompany extends Model
         'company_address',
         'company_website',
         'company_email',
-    ];
-
-    public $orderable = [
-        'id',
-        'company_name',
-        'company_address',
-        'company_website',
-        'company_email',
-    ];
-
-    public $filterable = [
-        'id',
-        'company_name',
-        'company_address',
-        'company_website',
-        'company_email',
+        'account_number',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

@@ -49,16 +49,8 @@
                             @include('components.table.sort', ['field' => 'company_name'])
                         </th>
                         <th>
-                            {{ trans('cruds.contactCompany.fields.company_address') }}
-                            @include('components.table.sort', ['field' => 'company_address'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.contactCompany.fields.company_website') }}
-                            @include('components.table.sort', ['field' => 'company_website'])
-                        </th>
-                        <th>
-                            {{ trans('cruds.contactCompany.fields.company_email') }}
-                            @include('components.table.sort', ['field' => 'company_email'])
+                            {{ trans('cruds.contactCompany.fields.account_number') }}
+                            @include('components.table.sort', ['field' => 'account_number'])
                         </th>
                         <th>
                         </th>
@@ -77,13 +69,7 @@
                                 {{ $contactCompany->company_name }}
                             </td>
                             <td>
-                                {{ $contactCompany->company_address }}
-                            </td>
-                            <td>
-                                {{ $contactCompany->company_website }}
-                            </td>
-                            <td>
-                                {{ $contactCompany->company_email }}
+                                {{ $contactCompany->account_number }}
                             </td>
                             <td>
                                 <div class="flex justify-end">
